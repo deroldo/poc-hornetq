@@ -24,11 +24,6 @@
 			<artifactId>netty</artifactId>
 			<version>3.2.10.Final</version>
 		</dependency>
-		<dependency>
-			<groupId>jboss</groupId>
-			<artifactId>jnp-client</artifactId>
-			<version>4.2.2.GA</version>
-		</dependency>
 
 	</dependencies>
 
