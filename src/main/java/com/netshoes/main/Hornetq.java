@@ -1,4 +1,4 @@
-package com.netshoes.jms;
+package com.netshoes.main;
 
 import java.util.Map;
 
@@ -29,11 +29,11 @@ public class Hornetq {
 		 ClientSession session = factory.createSession();
 		
 		 try {
-			 session.createQueue(Constants.DEFAULT_DESTINATION, Constants.DEFAULT_DESTINATION, true);
+			 session.createQueue(Constants.DESTINATION_VALUE, Constants.DESTINATION_VALUE, true);
 		 } catch (Exception e) {
 		 }
 		 
-		 ClientProducer producer = session.createProducer(Constants.DEFAULT_DESTINATION);
+		 ClientProducer producer = session.createProducer(Constants.DESTINATION_VALUE);
 		
 		 ClientMessage message = session.createMessage(true);
 		 message.getBodyBuffer().writeString("Hello");
@@ -42,7 +42,7 @@ public class Hornetq {
 		
 		 session.start();
 		
-		 ClientConsumer consumer = session.createConsumer(Constants.DEFAULT_DESTINATION);
+		 ClientConsumer consumer = session.createConsumer(Constants.DESTINATION_VALUE);
 		
 		 ClientMessage msgReceived = consumer.receive();
 		

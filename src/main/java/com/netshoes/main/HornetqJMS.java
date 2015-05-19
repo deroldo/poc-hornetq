@@ -1,4 +1,4 @@
-package com.netshoes.jms;
+package com.netshoes.main;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class HornetqJMS {
 		Connection connection = null;
 		try {
 			// Step 1. Directly instantiate the JMS Queue object.
-			Queue queue = HornetQJMSClient.createQueue(Constants.DEFAULT_DESTINATION);
+			Queue queue = HornetQJMSClient.createQueue(Constants.DESTINATION_VALUE);
 
 			// Step 2. Instantiate the TransportConfiguration object which
 			// contains the knowledge of what transport to use,
@@ -57,16 +57,16 @@ public class HornetqJMS {
 			// Step 8. Send the Message
 			producer.send(message);
 
-			// Step 9. Create a JMS Message Consumer
-			MessageConsumer messageConsumer = session.createConsumer(queue);
+//			// Step 9. Create a JMS Message Consumer
+//			MessageConsumer messageConsumer = session.createConsumer(queue);
 
 			// Step 10. Start the Connection
 			connection.start();
 
 			// Step 11. Receive the message
-			TextMessage messageReceived = (TextMessage) messageConsumer.receive();
-
-			System.out.println("Received message: " + messageReceived.getText());
+//			TextMessage messageReceived = (TextMessage) messageConsumer.receive();
+//
+//			System.out.println("Received message: " + messageReceived.getText());
 		} finally {
 			if (connection != null) {
 				connection.close();
