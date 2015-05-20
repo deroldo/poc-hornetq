@@ -17,11 +17,10 @@ public class Constants {
 	public static final String CONNECTOR_CLASS_NAME_VALUE = "org.hornetq.core.remoting.impl.netty.NettyConnectorFactory";
 	
 	public static final String DESTINATION = "destination";
-	public static final String DESTINATION_VALUE = "CatalogQueue";
+	public static final String DESTINATION_SIMPLE_NAME = "CatalogQueue";
+	public static final String DESTINATION_VALUE = "java:/queue/" + DESTINATION_SIMPLE_NAME;
 	
-	public static final String CONNECTION_FACTORY_VALUE = "NettyConnectionFactory";
-	
-	public static final String CONNECTION_FACTORY_MAPPED_NAME = "jnp://" + HOST + ":" + PORT + "/" + CONNECTION_FACTORY_VALUE;
-	public static final String QUEUE_MAPPED_NAME = "jnp://" + HOST + ":" + PORT + "/" + DESTINATION_VALUE;
+	public static final String CONNECTION_FACTORY_SIMPLE_NAME = "NettyConnectionFactory";
+	public static final String CONNECTION_FACTORY_VALUE = "java:/" + CONNECTION_FACTORY_SIMPLE_NAME;
 	
 }

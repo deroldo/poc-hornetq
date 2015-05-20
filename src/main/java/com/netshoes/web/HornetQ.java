@@ -10,13 +10,14 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 
+import org.jboss.ejb3.annotation.ResourceAdapter;
+
 import com.netshoes.main.Constants;
 
 @MessageDriven(name = "CatalogQueueWithHornetQ", activationConfig = {
 		@ActivationConfigProperty(propertyName = Constants.DESTINATION_TYPE, propertyValue = Constants.QUEUE),
-		@ActivationConfigProperty(propertyName = Constants.DESTINATION, propertyValue = Constants.DESTINATION_VALUE),
-		@ActivationConfigProperty(propertyName = Constants.CONNECTIONS_PARAM, propertyValue = Constants.CONNECTIONS_PARAM_VALUE),
-		@ActivationConfigProperty(propertyName = Constants.CONNECTOR_CLASS_NAME, propertyValue = Constants.CONNECTOR_CLASS_NAME_VALUE) })
+		@ActivationConfigProperty(propertyName = Constants.DESTINATION, propertyValue = Constants.DESTINATION_VALUE) })
+@ResourceAdapter(Constants.CONNECTION_FACTORY_SIMPLE_NAME)
 @TransactionManagement(value = TransactionManagementType.CONTAINER)
 @TransactionAttribute(value = TransactionAttributeType.REQUIRED)
 public class HornetQ implements MessageListener {

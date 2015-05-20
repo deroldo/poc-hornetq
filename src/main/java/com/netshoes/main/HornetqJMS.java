@@ -19,7 +19,7 @@ public class HornetqJMS {
 		Connection connection = null;
 		try {
 			// Step 1. Directly instantiate the JMS Queue object.
-			Queue queue = HornetQFactory.createQueue(Constants.DESTINATION_VALUE);
+			Queue queue = HornetQFactory.createQueue(Constants.DESTINATION_SIMPLE_NAME);
 
 			// Step 2. Instantiate the TransportConfiguration object which
 			// contains the knowledge of what transport to use,
