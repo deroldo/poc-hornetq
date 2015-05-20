@@ -19,4 +19,9 @@ public class Constants {
 	public static final String DESTINATION = "destination";
 	public static final String DESTINATION_VALUE = "CatalogQueue";
 	
+	public static final String CONNECTION_FACTORY_VALUE = "NettyConnectionFactory";
+	
+	public static final String CONNECTION_FACTORY_MAPPED_NAME = "jnp://" + HOST + ":" + PORT + "/" + CONNECTION_FACTORY_VALUE;
+	public static final String QUEUE_MAPPED_NAME = "jnp://" + HOST + ":" + PORT + "/" + DESTINATION_VALUE;
+	
 }
